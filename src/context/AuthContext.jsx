@@ -37,14 +37,14 @@ export const AuthProvider = ({ children }) => {
     }
     saveUser(username, password)
     localStorage.setItem(`tasks_${username}`, JSON.stringify([]))
-    toast.success('Account created! Please login.')
+    toast.success('Account created successfully! Please login.')
   }
 
   const logout = () => {
     setUser(null)
     setIsAuthenticated(false)
     localStorage.removeItem('task_manager_current_user')
-    toast.success('Logged out')
+    toast.success('Logged out successfully')
   }
 
   return (
