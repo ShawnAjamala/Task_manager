@@ -1,6 +1,9 @@
 const USERS_KEY = 'task_manager_users'
 
-export const getUsers = () => JSON.parse(localStorage.getItem(USERS_KEY) || '[]')
+export const getUsers = () => {
+  const users = localStorage.getItem(USERS_KEY)
+  return users ? JSON.parse(users) : []
+}
 
 export const saveUser = (username, password) => {
   const users = getUsers()
@@ -10,4 +13,7 @@ export const saveUser = (username, password) => {
   }
 }
 
-export const getUser = (username) => getUsers().find(u => u.username === username)
+export const getUser = (username) => {
+  const users = getUsers()
+  return users.find(u => u.username === username)
+}
