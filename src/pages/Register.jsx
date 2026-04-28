@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-
+import AuthForm from '../components/AuthForm'
 const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
